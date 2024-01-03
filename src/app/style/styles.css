@@ -92,6 +92,7 @@ button.addToCart-btn {
     font-weight: bold;
     background-color: var(--second-color);
     color: var(--basic-color);
+    cursor: pointer;
 }
 button.removeFromCart-btn {
     display: block;
@@ -103,4 +104,9 @@ button.removeFromCart-btn {
     font-weight: bold;
     background-color: var(--main-color);
     color: var(--basic-color);
+    cursor: pointer;
+}
+button.addToCart-btn a {
+    color: #fff;
+    text-decoration: none;
 }
