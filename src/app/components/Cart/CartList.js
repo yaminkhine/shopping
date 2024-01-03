@@ -28,10 +28,14 @@ const CartList = () => {
     fetchCartItems();
   };
 
+  const calculateTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price, 0);
+  };
+
   return (
     <div>
       <h1>Your Cart</h1>
-      <ul className="product-list">
+      <ul className="product-list cart-list">
         {cartItems.map(item => (
           <li key={item.id}>
             <img src={item.image} /><br/>
@@ -44,6 +48,9 @@ const CartList = () => {
           </li>
         ))}
       </ul>
+      <div className="total-price">
+        <strong>Total Price:</strong> ${calculateTotalPrice()}
+      </div>
     </div>
   );
 };

@@ -110,3 +110,26 @@ button.addToCart-btn a {
     color: #fff;
     text-decoration: none;
 }
+ul.product-list.cart-list {
+    display: block;
+}
+ul.product-list.cart-list li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+ul.product-list.cart-list li img {
+    width: 100px;
+    height: 100px;
+    padding: 0 20px;
+}
+.total-price strong {
+    margin-right: 50px;
+}
+
+.total-price {
+    text-align: right;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}

@@ -1,7 +1,5 @@
 "use client";
 import Header from "./components/Header/Header.js";
-import Cart from "../pages/cart.js";
-import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 
 function App() {
