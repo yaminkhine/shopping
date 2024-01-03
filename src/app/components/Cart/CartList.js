@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const CartList = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -49,8 +50,12 @@ const CartList = () => {
         ))}
       </ul>
       <div className="total-price">
-        <strong>Total Price:</strong> ${calculateTotalPrice()}
+      {cartItems.length > 0 && <p> <strong>Total Price </strong>: ${calculateTotalPrice()}</p>}
       </div>
+
+      {cartItems.length == 0 && <p className='Empty-Cart'> <strong>Empty Cart!! Please Vist <Link href='/'>Home</Link>  to buy.</strong></p>}
+
+
     </div>
   );
 };
