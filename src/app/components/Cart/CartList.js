@@ -24,7 +24,7 @@ const CartList = () => {
     const updatedCart = storedItems.filter(item => item !== productId);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
 
-    // Fetch the updated list of cart items
+   
     fetchCartItems();
   };
 

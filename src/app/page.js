@@ -6,18 +6,27 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [buttonTexts, setButtonTexts] = useState({});
+
 
   useEffect(() => {
+
     const fetchProducts = async () => {
       const response = await fetch('https://fakestoreapi.com/products/');
       const data = await response.json();
       setProducts(data.slice(0, 4));
+      const storedItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const initialButtonTexts = {};
+      data.forEach(product => {
+        initialButtonTexts[product.id] = storedItems.includes(product.id) ? 'View Cart' : 'Add to Cart';
+      });
+      setButtonTexts(initialButtonTexts);
     };
+    
 
     fetchProducts();
   }, []);
 
-  const [buttonTexts, setButtonTexts] = useState({});
 
   const handleAddToCart = (productId) => {
     const existingItems = JSON.parse(localStorage.getItem('cart')) || [];
