@@ -50,8 +50,16 @@ const CartList = () => {
         ))}
       </ul>
       <div className="total-price">
-      {cartItems.length > 0 && <p> <strong>Total Price </strong>: ${calculateTotalPrice()}</p>}
-      </div>
+  {cartItems.length > 0 && (
+    <>
+      <p>
+        <strong>Total Price:</strong> ${calculateTotalPrice()}
+      </p>
+      <Link href="/checkout" className='checkout-btn'>Proceed To Checkout</Link>
+    </>
+  )}
+</div>
+
 
       {cartItems.length == 0 && <p className='Empty-Cart'> <strong>Empty Cart!! Please Vist <Link href='/'>Home</Link>  to buy.</strong></p>}
 

@@ -1,6 +1,8 @@
 "use client";
 import Header from "./components/Header/Header.js";
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -55,7 +57,7 @@ function App() {
               <span>price: <strong>{product.price}</strong> </span> USD
               <button className="addToCart-btn" onClick={() => handleAddToCart(product.id)}>
                 {buttonTexts[product.id] ? (
-                    <a href="/cart">{buttonTexts[product.id]}</a>
+                    <Link href="/cart">{buttonTexts[product.id]}</Link>
                 ) : (
                   'Add to Cart'
                 )}
